@@ -1,282 +1,529 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>Sua Voz, Seu Poder | Noemiah Alvez</title>
-  <meta name="description" content="Imersão presencial gratuita com certificado, nos dias 10 e 11 de junho de 2026, em São Paulo, com Noemiah Alvez." />
-  <link rel="preconnect" href="https://www.youtube-nocookie.com">
-  <link rel="preconnect" href="https://i.ytimg.com">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sua Voz, Seu Poder</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header class="topbar">
-    <a href="#topo" aria-label="Voltar ao topo"><img src="assets/suavozseupoder.png" alt="Sua Voz Seu Poder" class="top-logo"></a>
-    <nav class="top-nav" aria-label="Navegação principal">
+    <a href="#" class="brand" aria-label="Sua Voz, Seu Poder">
+      <img
+        src="assets/suavozseupoder.png"
+        class="top-logo"
+        alt="Sua Voz, Seu Poder"
+      >
+    </a>
+
+    <nav class="top-nav" aria-label="Menu principal">
       <a href="#inscricao">Inscrição</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#local">Local</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#inscricao" class="top-cta">Garantir vaga</a>
+
+    <button type="button" class="top-cta abrir-inscricao">
+      Garantir vaga
+    </button>
   </header>
 
-  <main id="topo">
-    <section class="hero-photo" aria-label="Sua Voz, Seu Poder">
-      <img src="assets/CAPA_noemiah_1.webp" alt="Sua Voz, Seu Poder com Noemiah Alvez, dias 10 e 11 de junho, presencial em São Paulo" class="hero-main-img">
+  <main>
+
+    <section class="hero-photo">
+      <img
+        src="assets/CAPA_noemiah_1.webp"
+        class="hero-main-img"
+        alt="Sua Voz, Seu Poder com Noemiah Alvez"
+      >
+
       <div class="hero-bottom">
-        <span class="eyebrow">Imersão presencial + certificado</span>
-        <h1>Garanta sua vaga no encontro que desperta voz, presença e poder pessoal.</h1>
-        <p>Evento presencial em São Paulo nos dias <strong>10 e 11 de junho de 2026</strong>. A inscrição gratuita dá acesso ao encontro. O VIP libera e-book + gravação após o evento.</p>
+        <span class="eyebrow">
+          Imersão presencial + certificado
+        </span>
+
+        <h1>
+          Garanta sua vaga no encontro que desperta voz,
+          presença e poder pessoal.
+        </h1>
+
+        <p>
+          Evento presencial em São Paulo nos dias 10 e 11 de junho de 2026.
+          A inscrição gratuita dá acesso ao encontro. O VIP libera e-book
+          + gravação após o evento.
+        </p>
+
         <div class="hero-actions">
-         <a href="#" class="btn btn-secondary abrir-inscricao">
-  INSCRIÇÃO GRATUITA
-</a>
-          <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Quero o VIP por R$ 97,90</a>
+          <button type="button" class="btn btn-secondary abrir-inscricao">
+            Inscrição gratuita
+          </button>
+
+          <a href="#" class="btn btn-primary">
+            Quero o VIP por R$ 37,90
+          </a>
         </div>
       </div>
     </section>
 
     <section class="section intro" id="inscricao">
-      <div class="container narrow center-text">
-        <span class="eyebrow">Gratuito e com certificado</span>
-        <h2>Escolha como você quer viver essa experiência</h2>
-        <p class="lead">Você pode garantir sua vaga gratuita ou escolher a experiência VIP para ter acesso aos materiais extras e continuar estudando depois do encontro.</p>
-      </div>
-      <div class="container cards two">
-        <article class="price-card">
-          <span class="tag">Ingresso gratuito</span>
-          <h3>Participação presencial</h3>
-          <p class="price">R$ 0</p>
-          <ul>
-            <li>Acesso presencial ao encontro</li>
-            <li>Participação nos dias 10 e 11 de junho</li>
-            <li>Certificado de participação</li>
-            <li>Entrada no grupo oficial do WhatsApp</li>
-          </ul>
-          <a href="#" class="btn btn-secondary abrir-inscricao">
-  INSCRIÇÃO GRATUITA
-</a>
-        </article>
-        <article class="price-card vip" id="vip">
-          <span class="tag gold">Mais completo</span>
-          <h3>Experiência VIP</h3>
-          <p class="price">R$ 97,90</p>
-          <ul>
-            <li>Todos os benefícios do ingresso gratuito</li>
-            <li>E-book exclusivo após o evento</li>
-            <li>Gravação do encontro para assistir depois</li>
-            <li>Grupo VIP com avisos e orientações prioritárias</li>
-          </ul>
-          <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary full">Quero ser VIP</a>
-        </article>
+      <div class="container">
+        <div class="center-text narrow">
+          <span class="eyebrow center">
+            Escolha sua experiência
+          </span>
+
+          <h2>
+            Participe gratuitamente ou garanta o acesso VIP
+          </h2>
+
+          <p class="lead">
+            O encontro presencial é gratuito e com certificado. Para quem
+            deseja rever o conteúdo depois e receber materiais exclusivos,
+            existe a opção VIP.
+          </p>
+        </div>
+
+        <div class="cards two">
+
+          <article class="price-card">
+            <span class="tag">
+              Entrada gratuita
+            </span>
+
+            <h3>
+              Participação presencial
+            </h3>
+
+            <p>
+              Para mulheres que querem viver a experiência presencial do
+              Sua Voz, Seu Poder.
+            </p>
+
+            <ul>
+              <li>Acesso presencial ao encontro</li>
+              <li>Participação nos dias 10 e 11 de junho</li>
+              <li>Certificado de participação</li>
+              <li>Entrada no grupo oficial do evento</li>
+            </ul>
+
+            <button type="button" class="btn btn-secondary full abrir-inscricao">
+              Fazer inscrição gratuita
+            </button>
+          </article>
+
+          <article class="price-card vip">
+            <span class="tag gold">
+              Experiência VIP
+            </span>
+
+            <h3>
+              VIP com bônus exclusivos
+            </h3>
+
+            <p class="price">
+              R$ 37,90
+            </p>
+
+            <ul>
+              <li>Acesso presencial ao encontro</li>
+              <li>E-book exclusivo</li>
+              <li>Gravação do evento após a realização</li>
+              <li>Ideal para rever o conteúdo depois</li>
+            </ul>
+
+            <a href="#" class="btn btn-primary full">
+              Quero o VIP por R$ 37,90
+            </a>
+          </article>
+
+        </div>
       </div>
     </section>
 
     <section class="section trainer">
       <div class="container trainer-grid">
-        <div class="image-frame"><img src="assets/Transbordar_767_1_2_1.webp" alt="Noemiah Alvez palestrando"></div>
+        <div class="image-frame">
+          <img
+            src="assets/Transbordar_767_1_2_1.webp"
+            alt="Noemiah Alvez palestrando"
+          >
+        </div>
+
         <div>
-          <span class="eyebrow">Apresentação da palestrante</span>
-          <h2>Noemiah Alvez</h2>
-          <p class="lead">Mentora, comunicadora, autora e professora, Noemiah conduz mulheres a reconhecerem a própria voz como instrumento de posicionamento, inteligência emocional e transformação.</p>
+          <span class="eyebrow">
+            A mentora
+          </span>
+
+          <h2>
+            Noemiah Alvez
+          </h2>
+
+          <p class="lead">
+            Comunicadora, mentora e professora, Noemiah conduz mulheres a
+            reconhecerem a potência da própria voz e a se posicionarem com
+            mais segurança, presença e poder pessoal.
+          </p>
+
           <ul class="check-list">
-            <li>Experiência em comunicação, palco e desenvolvimento humano.</li>
-            <li>Condução acolhedora, prática e voltada para mulheres que querem sair da invisibilidade.</li>
-            <li>Idealizadora do encontro Sua Voz, Seu Poder.</li>
+            <li>Experiência em comunicação, palco e desenvolvimento pessoal</li>
+            <li>Vivência prática com mulheres em processos de transformação</li>
+            <li>Condução acolhedora, profunda e aplicável</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section" id="depoimentos">
-      <div class="container center-text">
-        <span class="eyebrow">Depoimentos</span>
-        <h2>Mulheres que já viveram essa transformação</h2>
-      </div>
-      <div class="container video-grid">
-        <article class="video-card">
-          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/nT65QCQcfAA?rel=0&modestbranding=1&playsinline=1" title="Depoimento 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-          <h3>Depoimento 1</h3>
-          <a class="video-link" href="https://youtu.be/nT65QCQcfAA" target="_blank" rel="noopener">Abrir no YouTube</a>
-        </article>
-        <article class="video-card">
-          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/sK7xMJi6oog?rel=0&modestbranding=1&playsinline=1" title="Depoimento 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-          <h3>Depoimento 2</h3>
-          <a class="video-link" href="https://youtu.be/sK7xMJi6oog" target="_blank" rel="noopener">Abrir no YouTube</a>
-        </article>
-        <article class="video-card">
-          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/jvb_aAZJ7mg?rel=0&modestbranding=1&playsinline=1" title="Depoimento 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-          <h3>Depoimento 3</h3>
-          <a class="video-link" href="https://youtu.be/jvb_aAZJ7mg" target="_blank" rel="noopener">Abrir no YouTube</a>
-        </article>
-      </div>
-    </section>
+      <div class="container">
+        <div class="center-text">
+          <span class="eyebrow center">
+            Depoimentos
+          </span>
 
-    <section class="section last-edition">
-      <div class="container narrow center-text">
-        <span class="eyebrow">Última edição</span>
-        <h2>Veja como foi a última edição do Sua Voz, Seu Poder</h2>
-      </div>
-      <div class="container narrow">
-        <div class="video-feature"><iframe src="https://www.youtube-nocookie.com/embed/jqL2Jvq8L5Y?rel=0&modestbranding=1&playsinline=1" title="Última edição Sua Voz Seu Poder" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <p class="center-text small-note"><a href="https://youtu.be/jqL2Jvq8L5Y" target="_blank" rel="noopener">Se o vídeo não carregar, assista direto no YouTube.</a></p>
-      </div>
-    </section>
+          <h2>
+            Mulheres que já viveram essa transformação
+          </h2>
+        </div>
 
-    <section class="section location" id="local">
-      <div class="container center-text">
-        <span class="eyebrow">Quando e onde?</span>
-        <h2>10 e 11 de junho de 2026 • São Paulo</h2>
-      </div>
-      <div class="container location-grid">
-        <div class="location-photo"><img src="assets/Ponte estaiada 2.png" alt="São Paulo e Ponte Estaiada"></div>
-        <div class="location-info">
-          <div class="schedule-grid">
-            <article class="info-card"><h3>Quarta — 10/06</h3><p>Credenciamento a partir das 8h00<br>Início às 9h00 | término às 18h00</p></article>
-            <article class="info-card"><h3>Quinta — 11/06</h3><p>Credenciamento a partir das 8h00<br>Início às 9h00 | término às 17h00</p></article>
-          </div>
-          <div class="address"><strong>Local:</strong> Instituto Lyouman<br>Rua Vieira de Morais, 1369 — Campo Belo, São Paulo - SP</div>
-          <div class="center-actions">
-            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Instituto%20Lyouman%20Rua%20Vieira%20de%20Morais%201369%20Campo%20Belo%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noopener">Ver no Google Maps</a>
-          </div>
-          <div class="hero-actions center-actions">
-            <a href="#" class="btn btn-secondary abrir-inscricao">
-  INSCRIÇÃO GRATUITA
-</a>
-            <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Comprar VIP R$ 97,90</a>
-          </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/nT65QCQcfAA"
+                title="Depoimento 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <h3>Depoimento 1</h3>
+
+            <a
+              href="https://youtu.be/nT65QCQcfAA"
+              class="video-link"
+              target="_blank"
+              rel="noopener noreferrer">
+              Assistir no YouTube
+            </a>
+          </article>
+
+          <article class="video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/sK7xMJi6oog"
+                title="Depoimento 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <h3>Depoimento 2</h3>
+
+            <a
+              href="https://youtu.be/sK7xMJi6oog"
+              class="video-link"
+              target="_blank"
+              rel="noopener noreferrer">
+              Assistir no YouTube
+            </a>
+          </article>
+
+          <article class="video-card">
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/jvb_aAZJ7mg"
+                title="Depoimento 3"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <h3>Depoimento 3</h3>
+
+            <a
+              href="https://youtu.be/jvb_aAZJ7mg"
+              class="video-link"
+              target="_blank"
+              rel="noopener noreferrer">
+              Assistir no YouTube
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
+    <section class="section last-edition">
+      <div class="container narrow">
+        <div class="center-text">
+          <span class="eyebrow center">
+            Última edição
+          </span>
+
+          <h2>
+            Veja como foi a última edição do Sua Voz, Seu Poder
+          </h2>
+        </div>
+
+        <div class="video-feature">
+          <iframe
+            src="https://www.youtube.com/embed/jqL2Jvq8L5Y"
+            title="Última edição do Sua Voz, Seu Poder"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="small-note center-text">
+          <a href="https://youtu.be/jqL2Jvq8L5Y" target="_blank" rel="noopener noreferrer">
+            Abrir vídeo no YouTube
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="local">
+      <div class="container location-grid">
+
+        <div class="location-photo">
+          <img
+            src="assets/bg111.webp"
+            alt="São Paulo"
+          >
+        </div>
+
+        <div class="location-info">
+          <span class="eyebrow">
+            Quando e onde?
+          </span>
+
+          <h2>
+            10 e 11 de junho de 2026 • São Paulo
+          </h2>
+
+          <div class="schedule-grid">
+            <div class="info-card">
+              <h3>Quarta — 10/06</h3>
+              <p>
+                Credenciamento a partir das 8h00<br>
+                Início às 9h00 | término às 18h00
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Quinta — 11/06</h3>
+              <p>
+                Credenciamento a partir das 8h00<br>
+                Início às 9h00 | término às 17h00
+              </p>
+            </div>
+          </div>
+
+          <p class="address">
+            Local: Instituto Lyouman. Rua Vieira de Morais, 1369 —
+            Campo Belo, São Paulo - SP.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="https://maps.google.com/?q=Instituto+Lyouman+Rua+Vieira+de+Morais+1369+Campo+Belo+São+Paulo"
+              class="btn btn-map"
+              target="_blank"
+              rel="noopener noreferrer">
+              Ver no Google Maps
+            </a>
+
+            <button type="button" class="btn btn-secondary abrir-inscricao">
+              Inscrição gratuita
+            </button>
+
+            <a href="#" class="btn btn-primary">
+              Quero o VIP
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section class="section" id="faq">
-      <div class="container narrow center-text"><span class="eyebrow">Perguntas frequentes</span></div>
-      <div class="container narrow accordion">
-        <details open><summary>O evento é gratuito mesmo?</summary><p>Sim. Existe a opção de inscrição gratuita para participação presencial no encontro. Também existe a opção VIP, para quem deseja receber o e-book e assistir à gravação do evento depois.</p></details>
-        <details><summary>Depois da inscrição entro em algum grupo?</summary><p>Sim. Após confirmar sua inscrição, você será direcionada ao grupo oficial do WhatsApp para receber avisos, orientações e conteúdos importantes sobre o encontro.</p></details>
-        <details><summary>Posso levar acompanhante?</summary><p>Sim, desde que a pessoa também faça a própria inscrição. As vagas são individuais e precisam ser confirmadas para organização do evento e emissão do certificado.</p></details>
-        <details><summary>O evento será presencial ou online?</summary><p>O encontro será presencial, em São Paulo. Para quem escolher o VIP, a gravação será disponibilizada após o evento, junto com o e-book exclusivo.</p></details>
-        <details><summary>Recebo certificado?</summary><p>Sim. O encontro oferece certificado de participação para as pessoas inscritas que participarem da programação.</p></details>
-        <details><summary>Como funciona o uso de imagem?</summary><p>Durante o evento poderão ser feitas fotos e gravações para divulgação institucional, redes sociais e materiais de comunicação do projeto. Ao participar, a inscrita autoriza o uso da própria imagem nesses registros, sem cobrança ou remuneração.</p></details>
-        <details><summary>O que está incluso no VIP?</summary><p>O ingresso VIP inclui participação presencial, certificado, acesso ao grupo VIP, e-book exclusivo e gravação do encontro para assistir após a realização do evento.</p></details>
-        <details><summary>Meus dados estão protegidos?</summary><p>Os dados informados na inscrição serão usados apenas para organização do evento, comunicação com participantes e entrega dos materiais contratados, em conformidade com a LGPD.</p></details>
+      <div class="container narrow">
+        <div class="center-text">
+          <span class="eyebrow center">
+            Dúvidas frequentes
+          </span>
+
+          <h2>
+            Perguntas para quebrar objeções
+          </h2>
+        </div>
+
+        <div class="accordion">
+          <details>
+            <summary>O evento é gratuito mesmo?</summary>
+            <p>
+              Sim. A participação presencial é gratuita. Também existe a opção
+              VIP para quem deseja receber o e-book e ter acesso à gravação do evento.
+            </p>
+          </details>
+
+          <details>
+            <summary>Depois da inscrição entro em algum grupo?</summary>
+            <p>
+              Sim. Após preencher sua inscrição, você será direcionada ao grupo
+              oficial do evento no WhatsApp para receber avisos, orientações e
+              informações importantes.
+            </p>
+          </details>
+
+          <details>
+            <summary>Posso levar acompanhante?</summary>
+            <p>
+              Sim, desde que cada pessoa realize sua própria inscrição para que
+              a organização tenha o controle correto de participantes.
+            </p>
+          </details>
+
+          <details>
+            <summary>O evento será presencial ou online?</summary>
+            <p>
+              O encontro é presencial em São Paulo. A gravação será liberada
+              posteriormente para quem adquirir o acesso VIP.
+            </p>
+          </details>
+
+          <details>
+            <summary>Haverá uso de imagem?</summary>
+            <p>
+              O evento poderá ser fotografado e gravado para fins de divulgação,
+              registro institucional e materiais relacionados ao Sua Voz, Seu Poder.
+            </p>
+          </details>
+
+          <details>
+            <summary>Como meus dados serão utilizados?</summary>
+            <p>
+              Seus dados serão utilizados apenas para confirmar sua inscrição,
+              enviar informações sobre o evento e comunicações relacionadas,
+              respeitando a LGPD.
+            </p>
+          </details>
+        </div>
       </div>
     </section>
 
     <section class="section final-cta">
       <div class="container narrow center-text">
-        <img src="assets/Frame_1707480869_1.webp" class="final-logo" alt="Sua Voz, Seu Poder">
-        <h2>Escolha sua experiência e garanta sua vaga</h2>
-        <p class="lead">Uma oportunidade para se reconectar com sua voz, fortalecer sua presença e dar um novo passo na sua história.</p>
-        <div class="hero-actions center-actions">
-          <a href="#" class="btn btn-secondary abrir-inscricao">
-  INSCRIÇÃO GRATUITA
-</a>
-          <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Quero o VIP R$ 97,90</a>
+        <img
+          src="assets/suavozseupoder.png"
+          class="final-logo"
+          alt="Sua Voz, Seu Poder"
+        >
+
+        <h2>
+          Sua voz pode ser o ponto de virada da sua história
+        </h2>
+
+        <p class="lead">
+          Garanta sua participação no encontro presencial gratuito
+          ou escolha a experiência VIP para acessar os bônus.
+        </p>
+
+        <div class="center-actions">
+          <button type="button" class="btn btn-secondary abrir-inscricao">
+            Fazer inscrição gratuita
+          </button>
+
+          <a href="#" class="btn btn-primary">
+            Quero o VIP por R$ 37,90
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
-    <p>© 2026 Sua Voz, Seu Poder. Todos os direitos reservados.</p>
-    <p>Política de privacidade e LGPD: os dados coletados serão utilizados apenas para inscrição, comunicação e entrega dos conteúdos relacionados ao evento.</p>
-  </footer>
-  <script src="script.js"></script>
-  <div class="modal-overlay" id="inscricaoModal">
-
-  <div class="modal-box">
-
-    <button class="modal-close" id="fecharModal" type="button">
-      ×
-    </button>
-
-    <img
-      src="assets/suavozseupoder.png"
-      class="modal-logo"
-      alt="Sua Voz Seu Poder"
-    >
-
-    <span class="eyebrow center">
-      INSCRIÇÃO GRATUITA
-    </span>
-
-    <h2>
-      Garanta sua vaga
-    </h2>
-
     <p>
-      Preencha seus dados para confirmar sua inscrição gratuita
-      no Sua Voz, Seu Poder.
+      © 2026 Sua Voz, Seu Poder. Todos os direitos reservados.
     </p>
 
-    <form
-      action="https://formsubmit.co/maferreiraa4@gmail.com"
-      method="POST"
-      class="modal-form"
-    >
+    <p>
+      LGPD: os dados enviados nesta página serão utilizados apenas para inscrição,
+      confirmação e comunicação sobre o evento.
+    </p>
+  </footer>
 
-      <input
-        type="text"
-        name="nome"
-        placeholder="Seu nome"
-        required
-      >
+  <div class="modal-overlay" id="inscricaoModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Seu melhor e-mail"
-        required
-      >
-
-      <input
-        type="tel"
-        name="whatsapp"
-        placeholder="WhatsApp com DDD"
-        required
-      >
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="Nova inscrição - Sua Voz, Seu Poder"
-      >
-
-      <input
-        type="hidden"
-        name="_next"
-        value="https://maferreiraa.github.io/noemiahalves/obrigado.html"
-      >
-
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
-
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-
-      <button type="submit" class="btn btn-primary full">
-        FAZER MINHA INSCRIÇÃO
+      <button
+        class="modal-close"
+        id="fecharModal"
+        type="button"
+        aria-label="Fechar formulário">
+        ×
       </button>
 
-    </form>
+      <img
+        src="assets/suavozseupoder.png"
+        class="modal-logo"
+        alt="Sua Voz, Seu Poder"
+      >
 
-    <small>
-      LGPD: seus dados serão usados apenas para confirmar sua inscrição
-      e enviar informações sobre o evento.
-    </small>
+      <span class="eyebrow center">
+        Inscrição gratuita
+      </span>
 
+      <h2 id="modalTitulo">
+        Garanta sua vaga
+      </h2>
+
+      <p>
+        Preencha seus dados para confirmar sua inscrição gratuita
+        no Sua Voz, Seu Poder.
+      </p>
+
+      <form id="inscricaoForm" class="modal-form">
+        <input
+          type="text"
+          name="nome"
+          placeholder="Seu nome"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Seu melhor e-mail"
+          required
+        >
+
+        <input
+          type="tel"
+          name="whatsapp"
+          placeholder="WhatsApp com DDD"
+          required
+        >
+
+        <button type="submit" class="btn btn-primary full">
+          Fazer minha inscrição
+        </button>
+      </form>
+
+      <small>
+        LGPD: seus dados serão usados apenas para confirmar sua inscrição
+        e enviar informações sobre o evento.
+      </small>
+
+      <p class="form-message" id="formMessage"></p>
+    </div>
   </div>
 
-</div>
   <script src="script.js"></script>
+
 </body>
 </html>
