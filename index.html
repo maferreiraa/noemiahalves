@@ -30,7 +30,9 @@
         <h1>Garanta sua vaga no encontro que desperta voz, presença e poder pessoal.</h1>
         <p>Evento presencial em São Paulo nos dias <strong>10 e 11 de junho de 2026</strong>. A inscrição gratuita dá acesso ao encontro. O VIP libera e-book + gravação após o evento.</p>
         <div class="hero-actions">
-          <a href="LINK_DO_INGRESSO_GRATUITO" class="btn btn-secondary">Inscrição gratuita</a>
+         <a href="#" class="btn btn-secondary abrir-inscricao">
+  INSCRIÇÃO GRATUITA
+</a>
           <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Quero o VIP por R$ 97,90</a>
         </div>
       </div>
@@ -53,7 +55,9 @@
             <li>Certificado de participação</li>
             <li>Entrada no grupo oficial do WhatsApp</li>
           </ul>
-          <a href="LINK_DO_INGRESSO_GRATUITO" class="btn btn-secondary full">Garantir vaga gratuita</a>
+          <a href="#" class="btn btn-secondary abrir-inscricao">
+  INSCRIÇÃO GRATUITA
+</a>
         </article>
         <article class="price-card vip" id="vip">
           <span class="tag gold">Mais completo</span>
@@ -138,7 +142,9 @@
             <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Instituto%20Lyouman%20Rua%20Vieira%20de%20Morais%201369%20Campo%20Belo%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noopener">Ver no Google Maps</a>
           </div>
           <div class="hero-actions center-actions">
-            <a href="LINK_DO_INGRESSO_GRATUITO" class="btn btn-secondary">Garantir vaga gratuita</a>
+            <a href="#" class="btn btn-secondary abrir-inscricao">
+  INSCRIÇÃO GRATUITA
+</a>
             <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Comprar VIP R$ 97,90</a>
           </div>
         </div>
@@ -165,7 +171,9 @@
         <h2>Escolha sua experiência e garanta sua vaga</h2>
         <p class="lead">Uma oportunidade para se reconectar com sua voz, fortalecer sua presença e dar um novo passo na sua história.</p>
         <div class="hero-actions center-actions">
-          <a href="LINK_DO_INGRESSO_GRATUITO" class="btn btn-secondary">Inscrição gratuita</a>
+          <a href="#" class="btn btn-secondary abrir-inscricao">
+  INSCRIÇÃO GRATUITA
+</a>
           <a href="LINK_DO_INGRESSO_VIP" class="btn btn-primary">Quero o VIP R$ 97,90</a>
         </div>
       </div>
@@ -177,5 +185,97 @@
     <p>Política de privacidade e LGPD: os dados coletados serão utilizados apenas para inscrição, comunicação e entrega dos conteúdos relacionados ao evento.</p>
   </footer>
   <script src="script.js"></script>
+  <div class="modal-overlay" id="inscricaoModal">
+
+  <div class="modal-box">
+
+    <button class="modal-close" id="fecharModal" type="button">
+      ×
+    </button>
+
+    <img
+      src="assets/suavozseupoder.png"
+      class="modal-logo"
+      alt="Sua Voz Seu Poder"
+    >
+
+    <span class="eyebrow center">
+      INSCRIÇÃO GRATUITA
+    </span>
+
+    <h2>
+      Garanta sua vaga
+    </h2>
+
+    <p>
+      Preencha seus dados para confirmar sua inscrição gratuita
+      no Sua Voz, Seu Poder.
+    </p>
+
+    <form
+      action="https://formsubmit.co/maferreiraa4@gmail.com"
+      method="POST"
+      class="modal-form"
+    >
+
+      <input
+        type="text"
+        name="nome"
+        placeholder="Seu nome"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Seu melhor e-mail"
+        required
+      >
+
+      <input
+        type="tel"
+        name="whatsapp"
+        placeholder="WhatsApp com DDD"
+        required
+      >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="Nova inscrição - Sua Voz, Seu Poder"
+      >
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://maferreiraa.github.io/noemiahalves/obrigado.html"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <button type="submit" class="btn btn-primary full">
+        FAZER MINHA INSCRIÇÃO
+      </button>
+
+    </form>
+
+    <small>
+      LGPD: seus dados serão usados apenas para confirmar sua inscrição
+      e enviar informações sobre o evento.
+    </small>
+
+  </div>
+
+</div>
 </body>
 </html>
