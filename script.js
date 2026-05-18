@@ -1,16 +1,22 @@
 /*
-  IMPORTANTE:
-  1. O botão "INSCRIÇÃO GRATUITA" abre o modal.
-  2. Ao enviar o formulário, a pessoa é redirecionada para obrigado.html.
-  3. Para salvar os dados em algum lugar, crie um Google Apps Script
-     e cole a URL publicada abaixo em GOOGLE_SCRIPT_URL.
+  SUA VOZ, SEU PODER — script.js
 
-  Se GOOGLE_SCRIPT_URL ficar vazio, o formulário abre, valida os dados
-  e redireciona para obrigado.html, mas NÃO salva os dados fora do navegador.
+  Este arquivo faz:
+  1. Abrir o formulário/modal ao clicar em qualquer botão com a classe .abrir-inscricao
+  2. Fechar o modal no X, ao clicar fora ou apertar ESC
+  3. Enviar os dados para o Google Apps Script / Google Sheets
+  4. Gerar código de ingresso e link do ingresso
+  5. Redirecionar para a página obrigado.html
 */
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5OVOClj3G3vpjHHg66aIixz4R9P24C1uHN-Sb9oXGZIcQFbBwVcXs2KDV1bi5ppbQ/exec";
-const THANK_YOU_URL = "https://maferreiraa.github.io/noemiahalves/obrigado.html";
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbx5OVOClj3G3vpjHHg66aIixz4R9P24C1uHN-Sb9oXGZIcQFbBwVcXs2KDV1bi5ppbQ/exec";
+
+const THANK_YOU_URL =
+    "https://maferreiraa.github.io/noemiahalves/obrigado.html";
+
+const INGRESSO_BASE_URL =
+    "https://maferreiraa.github.io/noemiahalves/ingresso.html";
 
 const modal = document.getElementById("inscricaoModal");
 const abrirModalBtns = document.querySelectorAll(".abrir-inscricao");
@@ -19,20 +25,38 @@ const inscricaoForm = document.getElementById("inscricaoForm");
 const formMessage = document.getElementById("formMessage");
 
 function abrirModal() {
+    if (!modal) return;
+
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
 
     const primeiroCampo = modal.querySelector("input");
+
     if (primeiroCampo) {
         setTimeout(() => primeiroCampo.focus(), 150);
     }
 }
 
 function fecharModalFn() {
+    if (!modal) return;
+
     modal.classList.remove("active");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
+}
+
+function gerarCodigoIngresso() {
+    const parteTempo = Date.now().toString().slice(-6);
+    const parteAleatoria = Math.floor(10 + Math.random() * 90);
+
+    return "SVSP-" + parteTempo + parteAleatoria;
+}
+
+function normalizarWhatsApp(numero) {
+    if (!numero) return "";
+
+    return numero.replace(/\D/g, "");
 }
 
 abrirModalBtns.forEach((botao) => {
@@ -42,69 +66,94 @@ abrirModalBtns.forEach((botao) => {
     });
 });
 
-fecharModal.addEventListener("click", fecharModalFn);
+if (fecharModal) {
+    fecharModal.addEventListener("click", fecharModalFn);
+}
 
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        fecharModalFn();
-    }
-});
+if (modal) {
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            fecharModalFn();
+        }
+    });
+}
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("active")) {
+    if (
+        event.key === "Escape" &&
+        modal &&
+        modal.classList.contains("active")
+    ) {
         fecharModalFn();
     }
 });
 
-inscricaoForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+if (inscricaoForm) {
+    inscricaoForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    const submitButton = inscricaoForm.querySelector("button[type='submit']");
-    const formData = new FormData(inscricaoForm);
+        const submitButton =
+            inscricaoForm.querySelector("button[type='submit']");
 
-    const codigo =
-"SVSP-" + Math.floor(10000 + Math.random() * 90000);
+        const formData = new FormData(inscricaoForm);
 
-const lead = {
-    nome: formData.get("nome"),
-    email: formData.get("email"),
-    whatsapp: formData.get("whatsapp"),
-    tipo: "gratuito",
-    codigo: codigo,
-    origem: "LP Sua Voz Seu Poder",
-    data: new Date().toLocaleString("pt-BR")
-};
+        const nome = (formData.get("nome") || "").trim();
+        const email = (formData.get("email") || "").trim();
+        const whatsapp = normalizarWhatsApp(formData.get("whatsapp"));
 
-    formMessage.textContent = "Enviando sua inscrição...";
-    submitButton.disabled = true;
-    submitButton.textContent = "Enviando...";
+        const codigo = gerarCodigoIngresso();
 
-    try {
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
+        const linkIngresso =
+            INGRESSO_BASE_URL +
+            "?id=" + encodeURIComponent(codigo) +
+            "&nome=" + encodeURIComponent(nome);
+
+        const lead = {
+            data: new Date().toLocaleString("pt-BR"),
+            nome: nome,
+            email: email,
+            whatsapp: whatsapp,
+            tipo: "gratuito",
+            codigo: codigo,
+            linkIngresso: linkIngresso,
+            origem: "LP Sua Voz Seu Poder"
+        };
+
+        if (formMessage) {
+            formMessage.textContent = "Enviando sua inscrição...";
+        }
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+        }
+
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "text/plain;charset=utf-8"
                 },
                 body: JSON.stringify(lead)
             });
-       const result = await response.json();
 
-    localStorage.setItem(
-        "ingresso_svsp",
-        JSON.stringify(result)
-    );
+            localStorage.setItem(
+                "ingresso_svsp",
+                JSON.stringify(lead)
+            );
 
-    window.location.href = THANK_YOU_URL;
+            window.location.href = THANK_YOU_URL;
 
-} catch (error) {
+        } catch (error) {
+            console.error("Erro ao enviar inscrição:", error);
 
-    localStorage.setItem(
-        "lead_sua_voz_seu_poder",
-        JSON.stringify(lead)
-    );
+            localStorage.setItem(
+                "lead_sua_voz_seu_poder",
+                JSON.stringify(lead)
+            );
 
-    window.location.href = THANK_YOU_URL;
-
+            window.location.href = THANK_YOU_URL;
+        }
+    });
 }
-});
-
