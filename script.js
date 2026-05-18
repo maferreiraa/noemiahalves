@@ -12,6 +12,9 @@
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbx5OVOClj3G3vpjHHg66aIixz4R9P24C1uHN-Sb9oXGZIcQFbBwVcXs2KDV1bi5ppbQ/exec";
 
+const ZAPDATA_WEBHOOK =
+"https://dcjizoulbggsavizbukq.supabase.co/functions/v1/webhook-global?token=156b523d-fd9d-49fb-a61f-ee648c9d7368";
+
 const THANK_YOU_URL =
     "https://maferreiraa.github.io/noemiahalves/obrigado.html";
 
@@ -137,7 +140,21 @@ if (inscricaoForm) {
                 },
                 body: JSON.stringify(lead)
             });
-
+          
+await fetch(ZAPDATA_WEBHOOK, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        nome: nome,
+        email: email,
+        whatsapp: whatsapp,
+        codigo: codigo,
+        linkIngresso: linkIngresso
+    })
+});
+          
             localStorage.setItem(
                 "ingresso_svsp",
                 JSON.stringify(lead)
