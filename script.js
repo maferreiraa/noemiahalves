@@ -9,7 +9,7 @@
   e redireciona para obrigado.html, mas NÃO salva os dados fora do navegador.
 */
 
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5OVOClj3G3vpjHHg66aIixz4R9P24C1uHN-Sb9oXGZIcQFbBwVcXs2KDV1bi5ppbQ/exec";
 const THANK_YOU_URL = "https://maferreiraa.github.io/noemiahalves/obrigado.html";
 
 const modal = document.getElementById("inscricaoModal");
@@ -62,35 +62,49 @@ inscricaoForm.addEventListener("submit", async (event) => {
     const submitButton = inscricaoForm.querySelector("button[type='submit']");
     const formData = new FormData(inscricaoForm);
 
-    const lead = {
-        nome: formData.get("nome"),
-        email: formData.get("email"),
-        whatsapp: formData.get("whatsapp"),
-        origem: "LP Sua Voz Seu Poder",
-        data: new Date().toLocaleString("pt-BR")
-    };
+    const codigo =
+"SVSP-" + Math.floor(10000 + Math.random() * 90000);
+
+const lead = {
+    nome: formData.get("nome"),
+    email: formData.get("email"),
+    whatsapp: formData.get("whatsapp"),
+    tipo: "gratuito",
+    codigo: codigo,
+    origem: "LP Sua Voz Seu Poder",
+    data: new Date().toLocaleString("pt-BR")
+};
 
     formMessage.textContent = "Enviando sua inscrição...";
     submitButton.disabled = true;
     submitButton.textContent = "Enviando...";
 
     try {
-        if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("https://")) {
-            await fetch(GOOGLE_SCRIPT_URL, {
-                method: "POST",
-                mode: "no-cors",
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(lead)
             });
-        } else {
-            localStorage.setItem("lead_sua_voz_seu_poder", JSON.stringify(lead));
-        }
+       const result = await response.json();
 
-        window.location.href = THANK_YOU_URL;
-    } catch (error) {
-        localStorage.setItem("lead_sua_voz_seu_poder", JSON.stringify(lead));
-        window.location.href = THANK_YOU_URL;
-    }
+    localStorage.setItem(
+        "ingresso_svsp",
+        JSON.stringify(result)
+    );
+
+    window.location.href = THANK_YOU_URL;
+
+} catch (error) {
+
+    localStorage.setItem(
+        "lead_sua_voz_seu_poder",
+        JSON.stringify(lead)
+    );
+
+    window.location.href = THANK_YOU_URL;
+
+}
 });
+
