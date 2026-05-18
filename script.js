@@ -1,19 +1,12 @@
 /*
   SUA VOZ, SEU PODER — script.js
-
-  Este arquivo faz:
-  1. Abrir o formulário/modal ao clicar em qualquer botão com a classe .abrir-inscricao
-  2. Fechar o modal no X, ao clicar fora ou apertar ESC
-  3. Enviar os dados para o Google Apps Script / Google Sheets
-  4. Gerar código de ingresso e link do ingresso
-  5. Redirecionar para a página obrigado.html
 */
 
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbx5OVOClj3G3vpjHHg66aIixz4R9P24C1uHN-Sb9oXGZIcQFbBwVcXs2KDV1bi5ppbQ/exec";
 
 const ZAPDATA_WEBHOOK =
-"https://dcjizoulbggsavizbukq.supabase.co/functions/v1/webhook-global?token=156b523d-fd9d-49fb-a61f-ee648c9d7368";
+    "https://dcjizoulbggsavizbukq.supabase.co/functions/v1/webhook-global?token=156b523d-fd9d-49fb-a61f-ee648c9d7368";
 
 const THANK_YOU_URL =
     "https://maferreiraa.github.io/noemiahalves/obrigado.html";
@@ -58,7 +51,6 @@ function gerarCodigoIngresso() {
 
 function normalizarWhatsApp(numero) {
     if (!numero) return "";
-
     return numero.replace(/\D/g, "");
 }
 
@@ -108,8 +100,10 @@ if (inscricaoForm) {
 
         const linkIngresso =
             INGRESSO_BASE_URL +
-            "?id=" + encodeURIComponent(codigo) +
-            "&nome=" + encodeURIComponent(nome);
+            "?id=" +
+            encodeURIComponent(codigo) +
+            "&nome=" +
+            encodeURIComponent(nome);
 
         const lead = {
             data: new Date().toLocaleString("pt-BR"),
@@ -119,6 +113,9 @@ if (inscricaoForm) {
             tipo: "gratuito",
             codigo: codigo,
             linkIngresso: linkIngresso,
+            linkingresso: linkIngresso,
+            link_ingresso: linkIngresso,
+            ingresso: linkIngresso,
             origem: "LP Sua Voz Seu Poder"
         };
 
@@ -140,26 +137,20 @@ if (inscricaoForm) {
                 },
                 body: JSON.stringify(lead)
             });
-          
-await fetch(ZAPDATA_WEBHOOK, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        nome: nome,
-        email: email,
-        whatsapp: whatsapp,
-        codigo: codigo,
-        linkIngresso: linkIngresso
-        linkingresso: linkIngresso,
-        link_ingresso: linkIngresso,
-        ingresso: linkIngresso
-    })
-});
-    })
-});
-          
+
+            if (
+                ZAPDATA_WEBHOOK &&
+                ZAPDATA_WEBHOOK !== "https://dcjizoulbggsavizbukq.supabase.co/functions/v1/webhook-global?token=156b523d-fd9d-49fb-a61f-ee648c9d7368"
+            ) {
+                await fetch(ZAPDATA_WEBHOOK, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(lead)
+                });
+            }
+
             localStorage.setItem(
                 "ingresso_svsp",
                 JSON.stringify(lead)
