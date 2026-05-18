@@ -152,6 +152,11 @@ await fetch(ZAPDATA_WEBHOOK, {
         whatsapp: whatsapp,
         codigo: codigo,
         linkIngresso: linkIngresso
+        linkingresso: linkIngresso,
+        link_ingresso: linkIngresso,
+        ingresso: linkIngresso
+    })
+});
     })
 });
           
