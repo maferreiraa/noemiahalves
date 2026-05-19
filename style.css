@@ -763,3 +763,54 @@ body.modal-open {
         width: min(100% - 22px, var(--max));
     }
 }
+
+/* AJUSTES CLIENTE — verde/vermelho inspirados na página anterior */
+
+:root{
+    --green-cta:#009b00;
+    --green-cta-dark:#007a00;
+    --red-alert:#ff1717;
+}
+
+.btn-secondary,
+.top-cta,
+button.abrir-inscricao{
+    background:var(--green-cta);
+    color:#ffffff;
+    border-color:#ffffff;
+    box-shadow:0 0 18px rgba(0,155,0,.22);
+}
+
+.btn-secondary:hover,
+.top-cta:hover,
+button.abrir-inscricao:hover{
+    background:var(--green-cta-dark);
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+    color:#070707;
+}
+
+.eyebrow{
+    color:var(--red-alert);
+}
+
+.price-card .tag,
+.final-cta h2,
+#faq h2{
+    color:var(--red-alert);
+}
+
+.bio-list li{
+    color:#f1c85a;
+    font-weight:800;
+}
+
+.location-photo img{
+    width:100%;
+    height:100%;
+    min-height:420px;
+    object-fit:cover;
+    display:block;
+}
