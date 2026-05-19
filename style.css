@@ -857,5 +857,112 @@ a[href*="kiwify"]:hover {
     background: linear-gradient(135deg, #00e676, #00a63e) !important;
     transform: translateY(-2px);
 }
+/* =========================================
+   DOBRA DE VALOR
+========================================= */
 
+.valor-section{
+    padding:90px 20px;
+    background:#000;
+    position:relative;
+    overflow:hidden;
+}
+
+.valor-container{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.valor-topo{
+    font-size:2rem;
+    color:#ffffff;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.valor-antigo{
+    font-size:1.5rem;
+    color:#ffffff;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.valor-antigo span{
+    background:#ff0000;
+    padding:4px 10px;
+    border-radius:6px;
+    text-decoration:line-through;
+    color:#ffffff;
+}
+
+.valor-gratis{
+    font-size:5rem;
+    line-height:1;
+    color:#00ff40;
+    font-weight:900;
+    margin-bottom:30px;
+}
+
+.valor-subtitulo{
+    font-size:2.3rem;
+    color:#ffffff;
+    font-weight:800;
+    margin-bottom:40px;
+}
+
+.valor-subtitulo span{
+    color:#d4a017;
+}
+
+.valor-botoes{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn-valor-gratis{
+    background:linear-gradient(135deg,#d4a017,#f6d365);
+    color:#111;
+    padding:18px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:800;
+    transition:.3s;
+}
+
+.btn-valor-vip{
+    background:linear-gradient(135deg,#00c853,#009624);
+    color:#fff;
+    padding:18px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:800;
+    transition:.3s;
+}
+
+.btn-valor-gratis:hover,
+.btn-valor-vip:hover{
+    transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+    .valor-gratis{
+        font-size:3rem;
+    }
+
+    .valor-subtitulo{
+        font-size:1.4rem;
+    }
+
+    .valor-topo{
+        font-size:1.5rem;
+    }
+
+    .valor-antigo{
+        font-size:1.1rem;
+    }
+}
 }
