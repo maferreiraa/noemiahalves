@@ -992,43 +992,41 @@ a[href*="kiwify"]:hover {
     .video-grid{
         grid-template-columns:1fr;
     }
-   /* =========================================
-   FLOATING CTA MOBILE
+  /* =========================================
+   ÚLTIMA DOBRA DE URGÊNCIA
 ========================================= */
 
 .floating-cta{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    max-width:380px;
+
+    width:100%;
 
     background:#ffffff;
 
-    border-radius:18px;
+    padding:40px 20px;
 
-    padding:22px;
+    margin-top:60px;
 
-    z-index:9999;
-
-    box-shadow:0 15px 50px rgba(0,0,0,.45);
-
-    display:none;
+    border-top:4px solid #1eff00;
 }
 
 .floating-cta-content{
+
+    max-width:700px;
+
+    margin:0 auto;
+
     text-align:center;
 }
 
 .floating-cta h3{
+
     color:#ff0000;
 
-    font-size:1.5rem;
+    font-size:2rem;
 
     font-weight:900;
 
-    margin-bottom:12px;
+    margin-bottom:15px;
 
     text-transform:uppercase;
 
@@ -1036,21 +1034,21 @@ a[href*="kiwify"]:hover {
 }
 
 .floating-cta p{
+
     color:#111111;
 
-    font-size:1rem;
+    font-size:1.1rem;
 
-    line-height:1.4;
+    line-height:1.5;
 
-    margin-bottom:18px;
+    margin-bottom:25px;
 
     font-weight:700;
 }
 
 .floating-btn{
-    display:block;
 
-    width:100%;
+    display:inline-block;
 
     background:#1eff00;
 
@@ -1058,9 +1056,9 @@ a[href*="kiwify"]:hover {
 
     text-decoration:none;
 
-    padding:16px;
+    padding:18px 34px;
 
-    border-radius:12px;
+    border-radius:14px;
 
     font-weight:900;
 
@@ -1070,25 +1068,30 @@ a[href*="kiwify"]:hover {
 }
 
 .floating-btn:hover{
+
     transform:translateY(-2px);
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
     .floating-cta{
-        display:block;
+
+        padding:35px 20px;
     }
 
-}
+    .floating-cta h3{
 
-/* ESCONDE NO DESKTOP */
+        font-size:1.5rem;
+    }
 
-@media(min-width:769px){
+    .floating-cta p{
 
-    .floating-cta{
-        display:none !important;
+        font-size:1rem;
+    }
+
+    .floating-btn{
+
+        width:100%;
     }
 }
 }
