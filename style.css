@@ -1093,29 +1093,24 @@ a[href*="kiwify"]:hover {
 
         width:100%;
     }
-    /* DIVISOR ENTRE DOBRAS */
-
 .section-divider{
-    width:100%;
-    height:74px;
+    display:block !important;
+    width:100% !important;
+    height:64px !important;
 
-    background-image:url("assets/Frame_1707480869_1.webp");
-    background-repeat:repeat-x;
-    background-position:center;
-    background-size:auto 74px;
+    background-image:url("./assets/Frame_1707480869_1.webp") !important;
+    background-repeat:repeat-x !important;
+    background-position:center center !important;
+    background-size:auto 64px !important;
 
     border-top:1px solid rgba(255,212,59,.25);
     border-bottom:1px solid rgba(255,212,59,.25);
 }
 
 @media(max-width:768px){
-
     .section-divider{
-        height:54px;
-        background-size:auto 54px;
+        height:46px !important;
+        background-size:auto 46px !important;
     }
-
-}
-}
 }
 }
