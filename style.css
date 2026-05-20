@@ -992,4 +992,69 @@ a[href*="kiwify"]:hover {
     .video-grid{
         grid-template-columns:1fr;
     }
+    /* =========================================
+   FLOATING CTA MOBILE
+========================================= */
+
+.floating-cta{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:380px;
+    background:#ffffff;
+    border-radius:14px;
+    padding:18px;
+    z-index:9999;
+    box-shadow:0 10px 40px rgba(0,0,0,.45);
+    display:none;
+}
+
+.floating-cta-content{
+    text-align:center;
+}
+
+.floating-cta h3{
+    color:#ff0000;
+    font-size:1.4rem;
+    font-weight:900;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.floating-cta p{
+    color:#111111;
+    font-size:.95rem;
+    line-height:1.4;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.floating-btn{
+    display:block;
+    width:100%;
+    background:#1eff00;
+    color:#111111;
+    text-decoration:none;
+    padding:16px;
+    border-radius:10px;
+    font-weight:900;
+    font-size:.95rem;
+    transition:.3s;
+}
+
+.floating-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* MOSTRA SOMENTE NO MOBILE */
+
+@media(max-width:768px){
+
+    .floating-cta{
+        display:block;
+    }
+
+}
 }
