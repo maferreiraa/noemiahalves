@@ -857,6 +857,7 @@ a[href*="kiwify"]:hover {
     background: linear-gradient(135deg, #00e676, #00a63e) !important;
     transform: translateY(-2px);
 }
+
 /* =========================================
    DOBRA DE VALOR
 ========================================= */
@@ -899,7 +900,7 @@ a[href*="kiwify"]:hover {
 .valor-gratis{
     font-size:5rem;
     line-height:1;
-    color:#00ff40;
+    color:#1eff00;
     font-weight:900;
     margin-bottom:30px;
 }
@@ -933,12 +934,12 @@ a[href*="kiwify"]:hover {
 }
 
 .btn-valor-vip{
-    background:linear-gradient(135deg,#00c853,#12c700);
-    color:#fff;
+    background:linear-gradient(135deg,#1eff00,#12c700);
+    color:#111;
     padding:18px 30px;
     border-radius:999px;
     text-decoration:none;
-    font-weight:800;
+    font-weight:900;
     transition:.3s;
 }
 
@@ -948,6 +949,9 @@ a[href*="kiwify"]:hover {
 }
 
 @media(max-width:768px){
+    .valor-section{
+        padding:64px 18px;
+    }
 
     .valor-gratis{
         font-size:3rem;
@@ -964,8 +968,13 @@ a[href*="kiwify"]:hover {
     .valor-antigo{
         font-size:1.1rem;
     }
+}
 
-    .vagas-limitadas{
+/* =========================================
+   VAGAS LIMITADAS
+========================================= */
+
+.vagas-limitadas{
     color:#ff0000;
     font-size:1.5rem;
     font-weight:700;
@@ -976,127 +985,115 @@ a[href*="kiwify"]:hover {
 }
 
 @media(max-width:768px){
-
     .vagas-limitadas{
         font-size:1.2rem;
         padding:0 20px;
     }
-.video-grid{
+}
+
+/* =========================================
+   VÍDEOS ÚLTIMO EVENTO
+========================================= */
+
+.last-edition .video-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:30px;
 }
 
-@media(max-width:768px){
+.last-edition .video-wrapper iframe{
+    width:100%;
+    aspect-ratio:16 / 9;
+    border:0;
+    border-radius:16px;
+    background:#191919;
+    display:block;
+}
 
-    .video-grid{
+@media(max-width:768px){
+    .last-edition .video-grid{
         grid-template-columns:1fr;
     }
-  /* =========================================
+}
+
+/* =========================================
    ÚLTIMA DOBRA DE URGÊNCIA
 ========================================= */
 
 .floating-cta{
-
     width:100%;
-
     background:#ffffff;
-
     padding:40px 20px;
-
-    margin-top:60px;
-
+    margin-top:0;
     border-top:4px solid #1eff00;
 }
 
 .floating-cta-content{
-
     max-width:700px;
-
     margin:0 auto;
-
     text-align:center;
 }
 
 .floating-cta h3{
-
     color:#ff0000;
-
     font-size:2rem;
-
     font-weight:900;
-
     margin-bottom:15px;
-
     text-transform:uppercase;
-
     line-height:1.1;
 }
 
 .floating-cta p{
-
     color:#111111;
-
     font-size:1.1rem;
-
     line-height:1.5;
-
     margin-bottom:25px;
-
     font-weight:700;
 }
 
 .floating-btn{
-
     display:inline-block;
-
     background:#1eff00;
-
     color:#111111;
-
     text-decoration:none;
-
     padding:18px 34px;
-
     border-radius:14px;
-
     font-weight:900;
-
     font-size:1rem;
-
     transition:.3s;
 }
 
 .floating-btn:hover{
-
     transform:translateY(-2px);
 }
 
 @media(max-width:768px){
-
     .floating-cta{
-
         padding:35px 20px;
     }
 
     .floating-cta h3{
-
         font-size:1.5rem;
     }
 
     .floating-cta p{
-
         font-size:1rem;
     }
 
     .floating-btn{
-
         width:100%;
     }
+}
+
+/* =========================================
+   DIVISOR ENTRE DOBRAS
+========================================= */
+
 .section-divider{
     display:block !important;
     width:100% !important;
     height:64px !important;
+    min-height:64px !important;
 
     background-image:url("./assets/Frame_1707480869_1.webp") !important;
     background-repeat:repeat-x !important;
@@ -1110,7 +1107,7 @@ a[href*="kiwify"]:hover {
 @media(max-width:768px){
     .section-divider{
         height:46px !important;
+        min-height:46px !important;
         background-size:auto 46px !important;
     }
-}
 }
