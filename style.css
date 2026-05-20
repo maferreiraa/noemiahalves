@@ -981,6 +981,15 @@ a[href*="kiwify"]:hover {
         font-size:1.2rem;
         padding:0 20px;
     }
-
+.video-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
+
+@media(max-width:768px){
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
 }
