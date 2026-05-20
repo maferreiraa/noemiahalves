@@ -844,7 +844,7 @@ a.abrir-inscricao:hover {
 .btn-primary,
 .vip-button,
 a[href*="kiwify"] {
-    background: linear-gradient(135deg, #00c853, #009624) !important;
+    background: linear-gradient(135deg, #00c853, #12c700) !important;
     color: #ffffff !important;
     border: 1px solid #00e676 !important;
     box-shadow: 0 0 18px rgba(0, 200, 83, 0.35) !important;
@@ -933,7 +933,7 @@ a[href*="kiwify"]:hover {
 }
 
 .btn-valor-vip{
-    background:linear-gradient(135deg,#00c853,#009624);
+    background:linear-gradient(135deg,#00c853,#12c700);
     color:#fff;
     padding:18px 30px;
     border-radius:999px;
@@ -964,5 +964,23 @@ a[href*="kiwify"]:hover {
     .valor-antigo{
         font-size:1.1rem;
     }
+
+    .vagas-limitadas{
+    color:#ff0000;
+    font-size:1.5rem;
+    font-weight:700;
+    text-align:center;
+    margin:30px auto;
+    max-width:700px;
+    line-height:1.4;
+}
+
+@media(max-width:768px){
+
+    .vagas-limitadas{
+        font-size:1.2rem;
+        padding:0 20px;
+    }
+
 }
 }
